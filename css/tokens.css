@@ -1,0 +1,78 @@
+/* Canonical kit tokens. Override --pk-* on :root or html. */
+
+:root {
+  color-scheme: dark;
+  --pk-bg: #0f1115;
+  --pk-surface: #161b22;
+  --pk-surface-2: #1a2030;
+  --pk-soft: #0d1117;
+  --pk-border: #30363d;
+  --pk-border-soft: #2a2f3a;
+  --pk-text: #e8eaed;
+  --pk-text-soft: #f1f5f9;
+  --pk-muted: #9aa0a6;
+  --pk-label: #64748b;
+  --pk-link: #93c5fd;
+  --pk-link-hover: #bfdbfe;
+  --pk-cta: #2563eb;
+  --pk-cta-hover: #1d4ed8;
+  --pk-cta-label: #ffffff;
+  --pk-ok: #86efac;
+  --pk-warn: #fbbf24;
+  --pk-err: #f87171;
+  --pk-glow: #1a2030;
+  --pk-glow-wash: radial-gradient(
+    ellipse 120% 55% at 50% -8%,
+    var(--pk-glow) 0%,
+    transparent 55%
+  );
+  --pk-radius-card: 12px;
+  --pk-radius-control: 8px;
+  --pk-font: system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif;
+  --pk-focus: 0 0 0 3px rgba(37, 99, 235, 0.28);
+  --pk-theme: #2563eb;
+  --pk-page-max: 28rem;
+  --pk-page-wide: 56rem;
+  --pk-space: 0.65rem;
+  --pk-control-height: 2.75rem;
+  --pk-text-title: 1.35rem;
+  --pk-text-body: 0.95rem;
+  --pk-text-sm: 0.85rem;
+  --pk-text-label: 0.75rem;
+  --pk-qr-size: 10rem;
+  --pk-motion: 280ms;
+  --pk-motion-ease: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --pk-motion: 0ms;
+  }
+}
+
+html[data-theme="light"],
+html.pk-theme-light {
+  color-scheme: light;
+  --pk-bg: #f0f2f5;
+  --pk-surface: #ffffff;
+  --pk-surface-2: #e8eef8;
+  --pk-soft: #f8fafc;
+  --pk-border: #e2e8f0;
+  --pk-border-soft: #e8edf3;
+  --pk-text: #1e293b;
+  --pk-text-soft: #0f172a;
+  --pk-muted: #64748b;
+  --pk-label: #94a3b8;
+  --pk-link: #2563eb;
+  --pk-link-hover: #1d4ed8;
+  --pk-ok: #16a34a;
+  --pk-err: #dc2626;
+  --pk-glow: #e8eef8;
+}
+
+html.pk-density-compact {
+  --pk-space: 0.4rem;
+  --pk-control-height: 2.25rem;
+  --pk-text-title: 1.15rem;
+  --pk-qr-size: 8rem;
+}

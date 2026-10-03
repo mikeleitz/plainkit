@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Locale · plainkit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub" data-pk-i18n="page.sub">Overlay</p>
+          <h1 data-pk-i18n="page.title">Locale</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="./">Recipes</a>
+        <a href="./locale.html" aria-current="page">Locale</a>
+      </nav>
+    </header>
+
+    <p class="pk-muted" data-pk-i18n="page.lead">
+      English ships in the page. Other languages overlay from JSON.
+    </p>
+
+    <section class="pk-card pk-stack">
+      <p data-pk-i18n="hello">Hello Ada.</p>
+      <label class="pk-field">
+        <span class="pk-field-label" data-pk-i18n="email.label">Email</span>
+        <input
+          class="pk-input"
+          name="email"
+          type="email"
+          placeholder="Email"
+          data-pk-i18n-attr="placeholder:email.ph"
+        >
+      </label>
+      <p class="pk-muted" data-pk-i18n="missing.keep">
+        This sentence stays English. The catalog has no matching key.
+      </p>
+      <div class="pk-form-actions">
+        <button type="button" class="pk-btn pk-btn-cta" data-pk-i18n="save" id="save">Save</button>
+        <button type="button" class="pk-btn" data-pk-i18n="cancel" id="cancel">Cancel</button>
+      </div>
+    </section>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Load a catalog</h2>
+      <p class="pk-card-body">
+        German comes from <code>locales/de.json</code> through DataProvider.
+        English is a full page load. First paint does not wait on JSON.
+      </p>
+      <div class="pk-form-actions">
+        <button type="button" class="pk-btn pk-btn-cta" id="load-de">German</button>
+        <a class="pk-btn" href="./locale.html">English</a>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="./locale.js"></script>
+</body>
+</html>

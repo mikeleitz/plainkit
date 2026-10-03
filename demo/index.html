@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Recipes · plainkit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Copy a page</p>
+          <h1>Recipes</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="./" aria-current="page">Recipes</a>
+      </nav>
+    </header>
+
+    <p class="pk-muted">
+      Copy one HTML file plus its page script when it has one. Duplicate the header.
+      There is no router. The kitchen sink only proves widgets exist.
+    </p>
+
+    <section class="pk-card">
+      <h2 class="pk-card-title">Pages</h2>
+      <div class="pk-list">
+        <a class="pk-list-row" href="./recipes/login.html">
+          <span>
+            <span class="pk-list-title">Login</span>
+            <span class="pk-list-meta">Cover, fields, CTA, second button, banner</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/items.html">
+          <span>
+            <span class="pk-list-title">Items</span>
+            <span class="pk-list-meta">List, toolbar, crumbs, create and confirm delete</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/list.html">
+          <span>
+            <span class="pk-list-title">List</span>
+            <span class="pk-list-meta">Search, load with query params, empty state, pager</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/table.html">
+          <span>
+            <span class="pk-list-title">Table</span>
+            <span class="pk-list-meta">Bound tbody, search, pager, select, dialogs</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/dashboard.html">
+          <span>
+            <span class="pk-list-title">Dashboard</span>
+            <span class="pk-list-meta">Stats, progress, ranked list, table, filter, tabs</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/menu.html">
+          <span>
+            <span class="pk-list-title">Menu</span>
+            <span class="pk-list-meta">Header button, sheet of page links and actions</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/popover.html">
+          <span>
+            <span class="pk-list-title">Popover</span>
+            <span class="pk-list-meta">Small overlay next to a control. Not a sheet</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/hint.html">
+          <span>
+            <span class="pk-list-title">Hint</span>
+            <span class="pk-list-meta">Circle on a card. Hover tip. Click opens a new tab</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/accounts.html">
+          <span>
+            <span class="pk-list-title">Accounts</span>
+            <span class="pk-list-meta">App shell plus simple table</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/invite.html">
+          <span>
+            <span class="pk-list-title">Invite</span>
+            <span class="pk-list-meta">QR frame plus invite URL</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/settings.html">
+          <span>
+            <span class="pk-list-title">Settings</span>
+            <span class="pk-list-meta">Form, autofill tokens, read-only plan</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/status.html">
+          <span>
+            <span class="pk-list-title">Item</span>
+            <span class="pk-list-meta">Load cover, error cover, ready</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/activity.html">
+          <span>
+            <span class="pk-list-title">Activity</span>
+            <span class="pk-list-meta">Facts, status steps, bound log, Local and UTC</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/related.html">
+          <span>
+            <span class="pk-list-title">Related</span>
+            <span class="pk-list-meta">Facts, grouped neighbor lists, crumbs as a path</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/room.html">
+          <span>
+            <span class="pk-list-title">Room</span>
+            <span class="pk-list-meta">LiveProvider, vote, roster, send-dropped</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/denied.html?status=401">
+          <span>
+            <span class="pk-list-title">Signed out</span>
+            <span class="pk-list-meta">Interceptor 401 goes to login</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./recipes/denied.html?status=403">
+          <span>
+            <span class="pk-list-title">Not allowed</span>
+            <span class="pk-list-meta">Interceptor 403 goes to the 403 page</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="pk-card">
+      <h2 class="pk-card-title">Also copy</h2>
+      <div class="pk-list">
+        <a class="pk-list-row" href="./sink.html">
+          <span>
+            <span class="pk-list-title">Kitchen sink</span>
+            <span class="pk-list-meta">Catalog of widgets. Do not paste into an app</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./session.html">
+          <span>
+            <span class="pk-list-title">Session</span>
+            <span class="pk-list-meta">Hide controls. Deny a page with guard</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="./locale.html">
+          <span>
+            <span class="pk-list-title">Locale</span>
+            <span class="pk-list-meta">Overlay JSON onto English in the page</span>
+          </span>
+        </a>
+        <a class="pk-list-row" href="../pages/403.html">
+          <span>
+            <span class="pk-list-title">403</span>
+            <span class="pk-list-meta">Static deny page. Also 404 and 500</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

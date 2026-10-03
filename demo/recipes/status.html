@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Item · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page pk-cover">
+  <div id="cover-loading">
+    <main class="pk-shell">
+      <section class="pk-card pk-banner">
+        <h1>Loading</h1>
+        <p>Getting this item.</p>
+      </section>
+    </main>
+  </div>
+
+  <div id="cover-error" hidden>
+    <main class="pk-shell">
+      <section class="pk-card pk-banner pk-banner-err">
+        <h1>Could not load</h1>
+        <p id="error-detail">Could not load this item.</p>
+        <button type="button" class="pk-btn pk-btn-cta" id="retry">Try again</button>
+      </section>
+    </main>
+  </div>
+
+  <div class="pk-shell" id="ready" hidden>
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Item</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Item</span></li>
+      </ol>
+    </nav>
+
+    <section class="pk-card pk-stack">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title" id="item-title">Item</h2>
+        <div class="pk-cluster">
+          <button type="button" class="pk-btn" id="reload">Reload</button>
+          <button type="button" class="pk-btn" id="reload-fail">Reload as error</button>
+        </div>
+      </div>
+      <p class="pk-muted" id="item-notes"></p>
+    </section>
+  </div>
+  <script type="module" src="./status.js"></script>
+</body>
+</html>

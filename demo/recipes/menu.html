@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Menu · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Menu</h1>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="pk-btn"
+        id="open-menu"
+        aria-haspopup="dialog"
+        aria-controls="menu"
+        aria-expanded="false"
+      >Menu</button>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Menu</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <div class="pk-card pk-banner pk-banner-ok" id="banner-ok" hidden>
+        <h2>Created</h2>
+        <p id="banner-ok-copy">The item is on the items page in a real app.</p>
+      </div>
+
+      <section class="pk-card">
+        <h2 class="pk-card-title">Sheet menu</h2>
+        <p class="pk-muted">
+          One header button. Links load other pages. Actions stay here.
+          Persistent side nav is still the right chrome for many pages.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <dialog class="pk-dialog pk-sheet" id="menu" aria-labelledby="menu-title">
+    <h2 id="menu-title">Account</h2>
+    <p class="pk-label">Pages</p>
+    <nav class="pk-list" aria-label="Account">
+      <a class="pk-list-row" href="./dashboard.html">
+        <span class="pk-list-title">Dashboard</span>
+      </a>
+      <a class="pk-list-row" href="./items.html">
+        <span class="pk-list-title">Items</span>
+      </a>
+      <a class="pk-list-row" href="./table.html">
+        <span class="pk-list-title">Table</span>
+      </a>
+      <a class="pk-list-row" href="./accounts.html">
+        <span class="pk-list-title">Accounts</span>
+      </a>
+      <a class="pk-list-row" href="./settings.html">
+        <span class="pk-list-title">Settings</span>
+      </a>
+      <a class="pk-list-row" href="./menu.html" aria-current="page">
+        <span class="pk-list-title">Menu</span>
+      </a>
+    </nav>
+    <p class="pk-label">Actions</p>
+    <div class="pk-list">
+      <button type="button" class="pk-list-row" id="menu-new">
+        <span class="pk-list-title">New item</span>
+      </button>
+    </div>
+    <p class="pk-label">Times</p>
+    <div class="pk-cluster" id="menu-zone-toggle" role="group" aria-label="Time zone">
+      <button type="button" class="pk-btn" id="menu-zone-local" aria-pressed="true">Local</button>
+      <button type="button" class="pk-btn" id="menu-zone-utc" aria-pressed="false">UTC</button>
+    </div>
+    <button type="button" class="pk-btn" id="close-menu">Close</button>
+  </dialog>
+
+  <div id="menu-zone-note" class="pk-popover pk-note" popover="manual" hidden anchor="menu-zone-toggle" role="status"></div>
+
+  <dialog class="pk-dialog" id="create-dialog" aria-labelledby="create-title">
+    <h2 id="create-title">New item</h2>
+    <form id="create-form" class="pk-stack" method="dialog">
+      <label class="pk-field" id="field-title">
+        <span class="pk-field-label">Title</span>
+        <input class="pk-input" name="title" type="text">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <div class="pk-form-actions">
+        <button type="submit" class="pk-btn pk-btn-cta">Create</button>
+        <button type="button" class="pk-btn" id="cancel-create">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./menu.js"></script>
+</body>
+</html>

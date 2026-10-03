@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Widget · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1 id="page-title">Widget</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb" id="item-path">
+        <li><a href="../">Recipes</a></li>
+        <li><a href="./related.html?id=account">Account</a></li>
+        <li><span aria-current="page">Widget</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <section class="pk-card pk-stack" id="item-card">
+        <h2 class="pk-card-title">Item</h2>
+        <dl class="pk-dl">
+          <dt>Title</dt>
+          <dd id="item-title">Widget</dd>
+          <dt>Owner</dt>
+          <dd id="item-owner">Account</dd>
+          <dt>Status</dt>
+          <dd id="item-status">Open</dd>
+        </dl>
+      </section>
+
+      <section class="pk-card pk-empty" id="empty" hidden>
+        <h2>No related records</h2>
+        <p>Related items and accounts will show here when they exist.</p>
+      </section>
+
+      <section class="pk-card" id="items-card">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Related items</h2>
+        </div>
+        <nav class="pk-list" id="related-items" aria-label="Related items">
+          <a class="pk-list-row" href="./related.html?id=gadget">
+            <span>
+              <span class="pk-list-title">Gadget</span>
+              <span class="pk-list-meta">Related item</span>
+            </span>
+          </a>
+          <a class="pk-list-row" href="./related.html?id=sprocket">
+            <span>
+              <span class="pk-list-title">Sprocket</span>
+              <span class="pk-list-meta">Related item</span>
+            </span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="pk-card" id="accounts-card">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Related accounts</h2>
+        </div>
+        <nav class="pk-list" id="related-accounts" aria-label="Related accounts">
+          <a class="pk-list-row" href="./related.html?id=account">
+            <span>
+              <span class="pk-list-title">Account</span>
+              <span class="pk-list-meta">Owner</span>
+            </span>
+          </a>
+        </nav>
+      </section>
+    </div>
+  </div>
+
+  <template id="tpl-crumb">
+    <li><a href=""></a></li>
+  </template>
+  <template id="tpl-related">
+    <a class="pk-list-row" href="">
+      <span>
+        <span class="pk-list-title"></span>
+        <span class="pk-list-meta"></span>
+      </span>
+    </a>
+  </template>
+
+  <script type="module" src="./related.js"></script>
+</body>
+</html>

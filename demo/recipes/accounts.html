@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Accounts · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-app">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Accounts</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <div class="pk-app-body">
+      <nav class="pk-side" aria-label="Account">
+        <div class="pk-nav">
+          <a href="./dashboard.html">Dashboard</a>
+          <a href="./items.html">Items</a>
+          <a href="./table.html">Table</a>
+          <a href="./accounts.html" aria-current="page">Accounts</a>
+          <a href="./invite.html">Invite</a>
+          <a href="./settings.html">Settings</a>
+          <a href="./status.html">Item</a>
+        </div>
+      </nav>
+      <main class="pk-main pk-stack">
+        <section class="pk-card">
+          <h2 class="pk-card-title">Plan seats</h2>
+          <table class="pk-table">
+            <caption>3 accounts on this plan</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Plan</th>
+                <th scope="col" class="pk-num">Seats</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Atlas</th>
+                <td>standard</td>
+                <td class="pk-num">3</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th scope="row">Beacon</th>
+                <td>standard</td>
+                <td class="pk-num">12</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th scope="row">Cedar</th>
+                <td>trial</td>
+                <td class="pk-num">1</td>
+                <td>draft</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total</th>
+                <td></td>
+                <td class="pk-num">16</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

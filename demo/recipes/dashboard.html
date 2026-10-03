@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Dashboard · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-app">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <div class="pk-app-body">
+      <nav class="pk-side" aria-label="Account">
+        <div class="pk-nav">
+          <a href="./dashboard.html" aria-current="page">Dashboard</a>
+          <a href="./items.html">Items</a>
+          <a href="./table.html">Table</a>
+          <a href="./accounts.html">Accounts</a>
+          <a href="./invite.html">Invite</a>
+          <a href="./settings.html">Settings</a>
+          <a href="./status.html">Item</a>
+        </div>
+      </nav>
+      <main class="pk-main pk-stack">
+        <div class="pk-card pk-banner pk-banner-err" id="banner-err" hidden role="alert">
+          <h2>Could not load</h2>
+          <p id="banner-err-copy">The account summary is not available.</p>
+        </div>
+
+        <section class="pk-card">
+          <form method="get" class="pk-stack" id="board-filter">
+            <label class="pk-field">
+              <span class="pk-field-label">Search</span>
+              <input class="pk-input" name="q" type="search" value="" autocomplete="off">
+            </label>
+            <fieldset class="pk-stack">
+              <legend class="pk-field-label">Include</legend>
+              <label class="pk-check">
+                <input type="checkbox" name="trial" value="1" checked>
+                <span>Trial plans</span>
+              </label>
+              <label class="pk-check">
+                <input type="checkbox" name="draft" value="1" checked>
+                <span>Draft accounts</span>
+              </label>
+            </fieldset>
+            <div class="pk-form-actions">
+              <button type="submit" class="pk-btn pk-btn-cta">Apply</button>
+            </div>
+          </form>
+        </section>
+
+        <div class="pk-stack" id="board-work" hidden>
+          <div class="pk-cluster">
+            <section class="pk-card pk-stat">
+              <p class="pk-stat-label">Accounts</p>
+              <p class="pk-stat-value" id="stat-accounts">0</p>
+              <p class="pk-stat-trend" id="stat-accounts-trend">+2 this week</p>
+            </section>
+            <section class="pk-card pk-stat">
+              <p class="pk-stat-label">Seats</p>
+              <p class="pk-stat-value" id="stat-seats">0</p>
+              <p class="pk-stat-trend" id="stat-seats-trend">+4 this week</p>
+              <progress id="stat-seats-bar" max="80" value="0">0 of 80</progress>
+            </section>
+            <section class="pk-card pk-stat">
+              <p class="pk-stat-label">Active</p>
+              <p class="pk-stat-value" id="stat-active">0</p>
+              <p class="pk-stat-trend" id="stat-active-trend">-1 this week</p>
+            </section>
+          </div>
+
+          <section class="pk-card pk-empty" id="empty" hidden>
+            <h2 id="empty-title">No accounts match</h2>
+            <p id="empty-copy">Try a different search.</p>
+          </section>
+
+          <section class="pk-card" id="board-tabs" hidden>
+            <div class="pk-tabs" role="tablist" aria-label="Dashboard">
+              <button type="button" class="pk-tab" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">Overview</button>
+              <button type="button" class="pk-tab" role="tab" id="tab-accounts" aria-controls="panel-accounts" aria-selected="false">Accounts</button>
+            </div>
+            <div class="pk-tab-panel pk-stack" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
+              <h2 class="pk-card-title">By seats</h2>
+              <ol class="pk-list" id="rank-list"></ol>
+              <h2 class="pk-card-title">Plan mix</h2>
+              <div class="pk-stack" id="meter-list"></div>
+            </div>
+            <div class="pk-tab-panel" role="tabpanel" id="panel-accounts" aria-labelledby="tab-accounts" hidden>
+              <table class="pk-table">
+                <caption id="table-caption">Accounts</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Plan</th>
+                    <th scope="col" class="pk-num">Seats</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="account-rows"></tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">Total</th>
+                    <td></td>
+                    <td class="pk-num" id="table-seats"></td>
+                    <td></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <template id="tpl-rank">
+    <li class="pk-list-row">
+      <span>
+        <span class="pk-list-title"></span>
+        <span class="pk-list-meta"></span>
+      </span>
+      <span class="pk-num"></span>
+    </li>
+  </template>
+  <template id="tpl-meter">
+    <label class="pk-field">
+      <span class="pk-field-label"></span>
+      <progress max="1" value="0"></progress>
+    </label>
+  </template>
+  <template id="tpl-row">
+    <tr>
+      <th scope="row" data-name></th>
+      <td data-plan></td>
+      <td class="pk-num" data-seats></td>
+      <td data-state></td>
+    </tr>
+  </template>
+
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

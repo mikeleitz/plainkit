@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Invite · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Invite</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Join link</h2>
+      <p class="pk-card-body">
+        Show a QR the server rendered. The kit only frames the image.
+      </p>
+      <div class="pk-qr">
+        <img id="invite-qr" src="../invite-qr.svg" width="168" height="168" alt="Invite QR stand-in">
+      </div>
+      <p class="pk-pre" id="invite-url"></p>
+      <p class="pk-muted">
+        This SVG is a stand-in so the frame is visible. In an app,
+        <code>src</code> is a PNG or SVG your server made.
+      </p>
+    </section>
+  </div>
+  <script type="module" src="./invite.js"></script>
+</body>
+</html>

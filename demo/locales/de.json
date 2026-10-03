@@ -1,0 +1,10 @@
+{
+  "page.sub": "Overlay",
+  "page.title": "Locale",
+  "page.lead": "Englisch steht im HTML. Andere Sprachen kommen als JSON vom Server.",
+  "save": "Speichern",
+  "cancel": "Abbrechen",
+  "hello": "Hallo {name}.",
+  "email.ph": "E-Mail",
+  "email.label": "E-Mail"
+}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Kitchen sink · plainkit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/live.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell pk-shell-wide">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Kitchen sink</p>
+          <h1>plainkit</h1>
+        </div>
+      </div>
+      <div class="pk-cluster">
+        <nav class="pk-nav" aria-label="Sink">
+          <a href="./">Recipes</a>
+          <a href="#layout">Layout</a>
+          <a href="#forms">Forms</a>
+          <a href="#banners">Banners</a>
+          <a href="#stats">Stat</a>
+          <a href="#empty">Empty</a>
+          <a href="#activity">Activity</a>
+          <a href="#steps">Status</a>
+          <a href="#tabs">Tabs</a>
+          <a href="#sheet">Sheet</a>
+          <a href="#popover">Popover</a>
+          <a href="#hint">Hint</a>
+          <a href="#table">Table</a>
+          <a href="#qr">QR</a>
+          <a href="#settings">Settings</a>
+          <a href="#room">Room</a>
+          <a href="#live">Live</a>
+        </nav>
+        <button type="button" class="pk-btn" id="theme-toggle">Light theme</button>
+        <button type="button" class="pk-btn" id="density-toggle">Compact</button>
+      </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="./">Recipes</a></li>
+        <li><span aria-current="page">Kitchen sink</span></li>
+      </ol>
+    </nav>
+
+    <p class="pk-muted">
+      This sink proves the parts exist. Copy a whole page from
+      <a class="pk-inline" href="./">Recipes</a>.
+      Nav on this page jumps to examples here.
+    </p>
+
+    <p class="pk-label" id="layout">Cover and form</p>
+    <section class="pk-card pk-stack" id="forms">
+      <h2 class="pk-card-title">Join a room</h2>
+      <p class="pk-card-body">Cover pages use <code>.pk-cover</code> around a shell. Fields bind through a provider.</p>
+      <form id="join-form" class="pk-stack" method="post">
+        <label class="pk-field" id="field-name">
+          <span class="pk-field-label">Display name</span>
+          <input class="pk-input" name="name" type="text" autocomplete="nickname">
+          <span class="pk-field-hint">Shown to others in the room.</span>
+          <span class="pk-field-error" hidden></span>
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Email</span>
+          <input class="pk-input" name="email" type="email" autocomplete="email">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Phone</span>
+          <input class="pk-input" name="tel" type="tel" autocomplete="tel" inputmode="tel">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Site</span>
+          <input class="pk-input" name="url" type="url" autocomplete="url" inputmode="url">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Password</span>
+          <input class="pk-input" name="password" type="password" autocomplete="current-password">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Notes</span>
+          <textarea class="pk-textarea" name="notes" rows="3"></textarea>
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Role</span>
+          <select class="pk-select" name="role">
+            <option value="voter">Voter</option>
+            <option value="lead">Lead</option>
+          </select>
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Date</span>
+          <input class="pk-input" name="when" type="date">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Time</span>
+          <input class="pk-input" name="at" type="time">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Seats</span>
+          <input class="pk-input" name="seats" type="number" min="1" value="3">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Search</span>
+          <input class="pk-input" name="q" type="search">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">File</span>
+          <input class="pk-input" name="file" type="file">
+        </label>
+        <fieldset class="pk-stack">
+          <legend class="pk-field-label">Plan</legend>
+          <label class="pk-check">
+            <input type="radio" name="plan" value="standard" checked>
+            <span>Standard</span>
+          </label>
+          <label class="pk-check">
+            <input type="radio" name="plan" value="plus">
+            <span>Plus</span>
+          </label>
+        </fieldset>
+        <label class="pk-check">
+          <input type="checkbox" name="remember">
+          <span>Keep me signed in on this device</span>
+        </label>
+        <div class="pk-form-actions">
+          <button type="submit" class="pk-btn pk-btn-cta">Join room</button>
+          <button type="button" class="pk-btn">Continue another way</button>
+        </div>
+      </form>
+    </section>
+
+    <p class="pk-label" id="banners">Banners</p>
+    <section class="pk-stack">
+      <div class="pk-card pk-banner pk-banner-ok">
+        <h2>Saved</h2>
+        <p>Room settings are up to date.</p>
+      </div>
+      <div class="pk-card pk-banner pk-banner-info">
+        <h2>Live</h2>
+        <p>Voting is open. Selections stay private until reveal.</p>
+      </div>
+      <div class="pk-card pk-banner pk-banner-warn">
+        <h2>Slow connection</h2>
+        <p>The socket will reconnect on its own.</p>
+      </div>
+      <div class="pk-card pk-banner pk-banner-err" id="banner-err">
+        <h2>Could not join</h2>
+        <p>Check the invite link and try again.</p>
+        <button type="button" class="pk-btn pk-btn-icon" id="dismiss-err" aria-label="Dismiss">x</button>
+      </div>
+    </section>
+
+    <p class="pk-label" id="stats">Stat and progress</p>
+    <section class="pk-cluster">
+      <section class="pk-card pk-stat">
+        <p class="pk-stat-label">Seats</p>
+        <p class="pk-stat-value">16</p>
+        <p class="pk-stat-trend pk-stat-up">+3 this week</p>
+        <progress max="80" value="16">16 of 80</progress>
+      </section>
+    </section>
+
+    <p class="pk-label" id="empty">Empty state</p>
+    <section class="pk-card pk-empty">
+      <h2>No rooms yet</h2>
+      <p>Create a room when the team is ready to vote.</p>
+      <button type="button" class="pk-btn pk-btn-cta" id="open-create">New room</button>
+    </section>
+
+    <p class="pk-label" id="activity">Activity</p>
+    <section class="pk-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Activity</h2>
+        <div class="pk-cluster" id="sink-zone-toggle" role="group" aria-label="Time zone">
+          <button type="button" class="pk-btn" id="sink-zone-local" aria-pressed="true">Local</button>
+          <button type="button" class="pk-btn" id="sink-zone-utc" aria-pressed="false">UTC</button>
+        </div>
+      </div>
+      <ol class="pk-timeline" id="sink-activity">
+        <li>
+          <time datetime="2026-03-12T16:00:00Z">12 Mar 2026, 16:00</time>
+          <span class="pk-timeline-title">Saved the item.</span>
+          <span class="pk-timeline-meta">Account</span>
+        </li>
+        <li>
+          <time datetime="2026-03-12T11:30:00Z">12 Mar 2026, 11:30</time>
+          <span class="pk-timeline-title">Assigned the item.</span>
+          <span class="pk-timeline-meta">Account</span>
+        </li>
+        <li>
+          <time datetime="2026-03-11T09:15:00Z">11 Mar 2026, 09:15</time>
+          <span class="pk-timeline-title">Created the item.</span>
+          <span class="pk-timeline-meta">Account</span>
+        </li>
+      </ol>
+    </section>
+
+    <p class="pk-label" id="steps">Status</p>
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Status</h2>
+      <ol class="pk-steps" aria-label="Status">
+        <li class="pk-steps-done">Created</li>
+        <li class="pk-steps-done">Assigned</li>
+        <li class="pk-steps-now" aria-current="step">Review</li>
+        <li>Closed</li>
+      </ol>
+    </section>
+
+    <p class="pk-label" id="sheet">Sheet menu</p>
+    <section class="pk-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Account</h2>
+        <button
+          type="button"
+          class="pk-btn"
+          id="open-sheet"
+          aria-haspopup="dialog"
+          aria-controls="sheet-menu"
+          aria-expanded="false"
+        >Menu</button>
+      </div>
+      <p class="pk-muted">Optional chrome. Persistent side nav stays valid.</p>
+    </section>
+
+    <dialog class="pk-dialog pk-sheet" id="sheet-menu" aria-labelledby="sheet-title">
+      <h2 id="sheet-title">Account</h2>
+      <p class="pk-label">Pages</p>
+      <nav class="pk-list" aria-label="Sink">
+        <a class="pk-list-row" href="./">
+          <span class="pk-list-title">Recipes</span>
+        </a>
+        <a class="pk-list-row" href="./recipes/menu.html">
+          <span class="pk-list-title">Menu recipe</span>
+        </a>
+      </nav>
+      <p class="pk-label">Actions</p>
+      <div class="pk-list">
+        <button type="button" class="pk-list-row" id="sheet-new">
+          <span class="pk-list-title">New room</span>
+        </button>
+      </div>
+      <p class="pk-label">Times</p>
+      <div class="pk-cluster" id="sheet-zone-toggle" role="group" aria-label="Time zone">
+        <button type="button" class="pk-btn" id="sheet-zone-local" aria-pressed="true">Local</button>
+        <button type="button" class="pk-btn" id="sheet-zone-utc" aria-pressed="false">UTC</button>
+      </div>
+      <button type="button" class="pk-btn" id="close-sheet">Close</button>
+    </dialog>
+
+    <div id="sink-zone-note" class="pk-popover pk-note" popover="manual" hidden anchor="sink-zone-toggle" role="status"></div>
+    <div id="sheet-zone-note" class="pk-popover pk-note" popover="manual" hidden anchor="sheet-zone-toggle" role="status"></div>
+
+    <p class="pk-label" id="popover">Popover</p>
+    <section class="pk-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Widget</h2>
+        <button
+          type="button"
+          class="pk-btn"
+          id="open-popover"
+          popovertarget="sink-more"
+          aria-haspopup="true"
+          aria-controls="sink-more"
+        >More</button>
+      </div>
+      <p class="pk-muted">Small overlay. Not a sheet. Copy the recipe, not this catalog.</p>
+    </section>
+
+    <div id="sink-more" class="pk-popover" popover="auto" anchor="open-popover" aria-label="More">
+      <p class="pk-label">More</p>
+      <div class="pk-list">
+        <a class="pk-list-row" href="./recipes/popover.html">
+          <span>
+            <span class="pk-list-title">Popover recipe</span>
+            <span class="pk-list-meta">Small overlay next to a control</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <p class="pk-label" id="hint">Hint</p>
+    <section class="pk-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Status</h2>
+        <span class="pk-hint-wrap">
+          <a
+            class="pk-hint"
+            href="./recipes/hint-help.html#status"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="About this status"
+            aria-describedby="sink-hint-tip"
+          ><span aria-hidden="true">i</span></a>
+          <span id="sink-hint-tip" class="pk-hint-tip" role="tooltip">
+            Status is a short fact. Open the guide for the long version.
+          </span>
+        </span>
+      </div>
+      <p class="pk-muted">Circle on a card toolbar. Copy the recipe, not this catalog.</p>
+    </section>
+
+    <p class="pk-label" id="tabs">List, tabs, dialog</p>
+    <section class="pk-card" id="demo-tabs">
+      <div class="pk-tabs" role="tablist" aria-label="Demo sections">
+          <button type="button" class="pk-tab" role="tab" id="tab-rooms" aria-controls="panel-rooms" aria-selected="true">Rooms</button>
+          <button type="button" class="pk-tab" role="tab" id="tab-stories" aria-controls="panel-stories" aria-selected="false">Stories</button>
+          <button type="button" class="pk-tab" role="tab" id="tab-catalog" aria-controls="panel-catalog" aria-selected="false">Catalog</button>
+        </div>
+        <div class="pk-tab-panel" role="tabpanel" id="panel-rooms" aria-labelledby="tab-rooms">
+          <div class="pk-list" id="room-list"></div>
+        </div>
+        <div class="pk-tab-panel pk-stack" role="tabpanel" id="panel-stories" aria-labelledby="tab-stories" hidden>
+          <div class="pk-list">
+            <div class="pk-list-row">
+              <span>
+                <span class="pk-list-title">Invite link field</span>
+                <span class="pk-list-meta">Guests join with a display name.</span>
+              </span>
+            </div>
+            <div class="pk-list-row">
+              <span>
+                <span class="pk-list-title">Write the copy for empty states</span>
+                <span class="pk-list-meta">Draft</span>
+              </span>
+              <span class="pk-pill">draft</span>
+            </div>
+          </div>
+        </div>
+        <div class="pk-tab-panel pk-stack" role="tabpanel" id="panel-catalog" aria-labelledby="tab-catalog" hidden>
+          <p class="pk-muted">Catalog rows reuse selectable cards. Create uses the same dialog pattern.</p>
+        </div>
+    </section>
+
+    <dialog class="pk-dialog" id="create-dialog" aria-labelledby="create-title">
+      <h2 id="create-title">New room</h2>
+      <form id="create-form" class="pk-stack" method="dialog">
+        <label class="pk-field">
+          <span class="pk-field-label">Title</span>
+          <input class="pk-input" name="title" type="text" required>
+        </label>
+        <div class="pk-form-actions">
+          <button type="submit" class="pk-btn pk-btn-cta">Create</button>
+          <button type="button" class="pk-btn" id="cancel-create">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <p class="pk-label" id="table">Table</p>
+    <section class="pk-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Plan seats</h2>
+        <input class="pk-input" type="search" name="q" placeholder="Search" autocomplete="off">
+      </div>
+      <table class="pk-table">
+        <caption>3 accounts on this plan</caption>
+        <thead>
+          <tr>
+            <th>
+              <label class="pk-check">
+                <input type="checkbox" aria-label="Select all on this page">
+              </label>
+            </th>
+            <th scope="col">Name</th>
+            <th scope="col">Plan</th>
+            <th scope="col" class="pk-num">Seats</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label class="pk-check">
+                <input type="checkbox" checked aria-label="Select Atlas">
+              </label>
+            </td>
+            <th scope="row">Atlas</th>
+            <td>standard</td>
+            <td class="pk-num">3</td>
+            <td>active</td>
+          </tr>
+          <tr>
+            <td>
+              <label class="pk-check">
+                <input type="checkbox" aria-label="Select Beacon">
+              </label>
+            </td>
+            <th scope="row">Beacon</th>
+            <td>standard</td>
+            <td class="pk-num">12</td>
+            <td>active</td>
+          </tr>
+          <tr>
+            <td>
+              <label class="pk-check">
+                <input type="checkbox" aria-label="Select Cedar">
+              </label>
+            </td>
+            <th scope="row">Cedar</th>
+            <td>trial</td>
+            <td class="pk-num">1</td>
+            <td>draft</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <th scope="row">Total</th>
+            <td></td>
+            <td class="pk-num">16</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <nav aria-label="Pages">
+        <ol class="pk-pager">
+          <li><button type="button" disabled title="Previous" aria-label="Previous">‹</button></li>
+          <li><a href="#table">1</a></li>
+          <li><a href="#table" aria-current="page">2</a></li>
+          <li><button type="button">3</button></li>
+          <li><a href="#table" title="Next" aria-label="Next">›</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <p class="pk-label" id="qr">Invite QR</p>
+    <section class="pk-card pk-stack">
+      <div class="pk-qr">
+        <img id="invite-qr" src="./invite-qr.svg" width="168" height="168" alt="Invite QR stand-in">
+      </div>
+      <p class="pk-pre" id="invite-url"></p>
+      <p class="pk-muted">The kit does not encode. Point <code>src</code> at a PNG or SVG the server made.</p>
+    </section>
+
+    <p class="pk-label" id="settings">Org settings</p>
+    <section class="pk-card">
+      <h2 class="pk-card-title">License</h2>
+      <dl class="pk-dl">
+        <dt>Plan</dt>
+        <dd>standard</dd>
+        <dt>Team limit</dt>
+        <dd>1</dd>
+        <dt>Status</dt>
+        <dd>active</dd>
+        <dt>Invite</dt>
+        <dd>
+          <p class="pk-pre">https://example.test/join?code=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</p>
+        </dd>
+      </dl>
+    </section>
+
+    <p class="pk-label" id="room">Live room</p>
+    <section class="pk-split">
+      <div class="pk-main pk-stack">
+        <div class="pk-card pk-cluster">
+          <span class="pk-room-status" id="room-status">selecting</span>
+          <span class="pk-pill pk-pill-warn" id="room-pill">selecting</span>
+          <span class="pk-timer" id="room-timer">0:42</span>
+        </div>
+        <div class="pk-card">
+          <h2 class="pk-card-title">Story</h2>
+          <p class="pk-card-body">Guests may join from a link. The link dies when the session completes.</p>
+        </div>
+        <div>
+          <p class="pk-label">Options</p>
+          <div class="pk-selectable-grid" id="option-grid"></div>
+        </div>
+        <div>
+          <p class="pk-label">Specials</p>
+          <div class="pk-choice-row" id="choice-row"></div>
+        </div>
+        <div>
+          <p class="pk-label">Revealed</p>
+          <div class="pk-face-row" id="face-row"></div>
+        </div>
+        <div class="pk-btn-row">
+          <button type="button" class="pk-btn pk-btn-cta" id="reveal-btn">Reveal</button>
+          <button type="button" class="pk-btn" id="reset-room">Reset round</button>
+        </div>
+        <div class="pk-btn-row" id="hidden-lead" hidden>
+          <button type="button" class="pk-btn">Lead only. Must stay hidden.</button>
+        </div>
+      </div>
+      <aside class="pk-aside">
+        <section class="pk-card">
+          <h2 class="pk-card-title">People</h2>
+          <div class="pk-roster" id="roster"></div>
+        </section>
+      </aside>
+    </section>
+
+    <p class="pk-label" id="live">LiveProvider</p>
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Handshake</h2>
+      <p class="pk-card-body">Status: <strong id="live-status">idle</strong>. This demo does not open a socket.</p>
+      <p class="pk-card-body">Last event: <strong id="live-meta">none</strong></p>
+      <ol class="pk-muted">
+        <li>Connect. Put the token on <code>access_token</code> or send <code>authMessage</code> first.</li>
+        <li>Server sends <code>{ type: "snapshot", data }</code>.</li>
+        <li>UI calls <code>send(obj)</code> for commands. It never touches WebSocket.</li>
+        <li>Client pings every 25 seconds. Reconnect with backoff and wait for a new snapshot.</li>
+        <li><code>send</code> while not open is dropped. <code>meta.source</code> is <code>send-dropped</code>.</li>
+      </ol>
+      <div class="pk-form-actions">
+        <button type="button" class="pk-btn" id="live-send-btn">Send while down</button>
+      </div>
+    </section>
+  </div>
+
+  <template id="tpl-room-row">
+    <div class="pk-list-row">
+      <span>
+        <span class="pk-list-title"></span>
+        <span class="pk-list-meta"></span>
+      </span>
+      <span class="pk-pill"></span>
+    </div>
+  </template>
+  <template id="tpl-person">
+    <div class="pk-person">
+      <span class="pk-person-avatar"></span>
+      <span>
+        <span class="pk-person-name"></span>
+        <span class="pk-person-role"></span>
+      </span>
+      <span class="pk-pill"></span>
+    </div>
+  </template>
+  <template id="tpl-option">
+    <button type="button" class="pk-selectable" aria-pressed="false">
+      <span class="pk-selectable-cat"></span>
+      <span class="pk-selectable-title"></span>
+      <span class="pk-selectable-cost"></span>
+    </button>
+  </template>
+  <template id="tpl-choice">
+    <button type="button" class="pk-choice" aria-pressed="false"></button>
+  </template>
+  <template id="tpl-face">
+    <button type="button" class="pk-face">
+      <span class="pk-face-value"></span>
+      <span class="pk-face-caption"></span>
+    </button>
+  </template>
+
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>

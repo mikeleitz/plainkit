@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Popover · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Item</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+        <a href="./menu.html">Menu</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Popover</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <div class="pk-card pk-banner pk-banner-ok" id="banner-ok" hidden>
+        <h2>Copied</h2>
+        <p>The item link is on the clipboard.</p>
+      </div>
+
+      <section class="pk-card pk-stack">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Widget</h2>
+          <button
+            type="button"
+            class="pk-btn"
+            id="open-more"
+            popovertarget="item-more"
+            aria-haspopup="true"
+            aria-controls="item-more"
+            aria-expanded="false"
+          >More</button>
+        </div>
+        <dl class="pk-dl">
+          <dt>Owner</dt>
+          <dd>Account</dd>
+          <dt>Status</dt>
+          <dd>Open</dd>
+        </dl>
+        <p class="pk-muted">
+          More is a small overlay. A sheet is still the right chrome
+          for a sparse page menu. Side nav stays for pages people
+          switch all day.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <div id="item-more" class="pk-popover" popover="auto" anchor="open-more" aria-label="More">
+    <p class="pk-label">More</p>
+    <div class="pk-list">
+      <a class="pk-list-row" href="./activity.html">
+        <span>
+          <span class="pk-list-title">Activity</span>
+          <span class="pk-list-meta">Status and log</span>
+        </span>
+      </a>
+      <a class="pk-list-row" href="./related.html">
+        <span>
+          <span class="pk-list-title">Related</span>
+          <span class="pk-list-meta">Neighbor items</span>
+        </span>
+      </a>
+      <button
+        type="button"
+        class="pk-list-row"
+        id="copy-link"
+        popovertarget="item-more"
+        popovertargetaction="hide"
+      >
+        <span>
+          <span class="pk-list-title">Copy link</span>
+          <span class="pk-list-meta">This item</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="./popover.js"></script>
+</body>
+</html>

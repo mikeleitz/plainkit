@@ -1,0 +1,342 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body.pk-page {
+  font-family: var(--pk-font);
+  font-size: var(--pk-text-body);
+  background: var(--pk-glow-wash), var(--pk-bg);
+  color: var(--pk-text);
+  padding: calc(var(--pk-space) * 2);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Nested cover is already 100vh. Body padding would force a scrollbar. */
+body.pk-page:has(> .pk-cover) {
+  padding: 0;
+}
+
+.pk-shell {
+  width: 100%;
+  max-width: var(--pk-page-max);
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+.pk-shell-wide {
+  max-width: var(--pk-page-wide);
+}
+
+.pk-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pk-space);
+}
+
+.pk-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pk-space);
+}
+
+.pk-split {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .pk-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+
+/* Center when the block is short. Scroll from the top when it is tall. */
+.pk-cover {
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--pk-space) * 2);
+  overflow: auto;
+}
+
+html:has(body.pk-cover) {
+  height: 100%;
+}
+
+body.pk-page.pk-cover {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+.pk-cover .pk-shell {
+  padding-bottom: 0;
+  width: 100%;
+  margin-block: auto;
+}
+
+.pk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin: 0.25rem 0 1.25rem;
+}
+
+.pk-header-start {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.pk-app {
+  width: 100%;
+  max-width: var(--pk-page-wide);
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+.pk-app-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .pk-app-body:has(> .pk-side:not([hidden])) {
+    display: grid;
+    grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+
+.pk-side {
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .pk-side .pk-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
+  .pk-side .pk-nav a {
+    padding: 0.4rem 0.65rem;
+    border-radius: var(--pk-radius-control);
+  }
+
+  .pk-side .pk-nav a[aria-current="page"] {
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-border);
+  }
+}
+
+.pk-main {
+  min-width: 0;
+}
+
+.pk-aside {
+  min-width: 0;
+}
+
+.pk-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.pk-nav a {
+  color: var(--pk-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--pk-text-body);
+  transition: color var(--pk-motion) var(--pk-motion-ease);
+}
+
+.pk-nav a:hover {
+  color: var(--pk-link);
+}
+
+.pk-nav a[aria-current="page"] {
+  color: var(--pk-link);
+}
+
+.pk-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: var(--pk-text-sm);
+}
+
+.pk-crumb li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--pk-muted);
+}
+
+.pk-crumb li + li::before {
+  content: "/";
+  color: var(--pk-label);
+}
+
+.pk-crumb a {
+  color: var(--pk-link);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--pk-motion) var(--pk-motion-ease);
+}
+
+.pk-crumb a:hover {
+  color: var(--pk-link-hover);
+  text-decoration: underline;
+}
+
+.pk-crumb [aria-current="page"] {
+  color: var(--pk-text);
+  font-weight: 600;
+}
+
+.pk-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pk-space);
+}
+
+.pk-toolbar .pk-card-title,
+.pk-toolbar h1,
+.pk-toolbar h2 {
+  margin: 0;
+}
+
+.pk-toolbar .pk-input {
+  width: auto;
+  min-width: 10rem;
+}
+
+.pk-toolbar + .pk-list,
+.pk-toolbar + .pk-table,
+.pk-toolbar + .pk-table-wrap,
+.pk-toolbar + .pk-stack,
+.pk-toolbar + .pk-timeline {
+  margin-top: 0.9rem;
+}
+
+.pk-table-wrap[hidden] + .pk-empty {
+  margin-top: 0.9rem;
+}
+
+.pk-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pk-space);
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.pk-pager a,
+.pk-pager button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--pk-control-height);
+  min-width: var(--pk-control-height);
+  padding: 0 0.75rem;
+  border: 1px solid var(--pk-border);
+  border-radius: var(--pk-radius-control);
+  background: var(--pk-surface);
+  color: var(--pk-text);
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  transition:
+    border-color var(--pk-motion) var(--pk-motion-ease),
+    color var(--pk-motion) var(--pk-motion-ease),
+    box-shadow var(--pk-motion) var(--pk-motion-ease);
+}
+
+.pk-pager button {
+  cursor: pointer;
+}
+
+.pk-pager a:hover,
+.pk-pager a:focus,
+.pk-pager button:hover,
+.pk-pager button:focus {
+  border-color: var(--pk-link);
+  color: var(--pk-link);
+  outline: none;
+}
+
+.pk-pager a:focus-visible,
+.pk-pager button:focus-visible {
+  box-shadow: var(--pk-focus);
+}
+
+.pk-pager a[aria-current="page"],
+.pk-pager button[aria-current="page"] {
+  border-color: var(--pk-link);
+  color: var(--pk-link);
+}
+
+.pk-pager button:disabled,
+.pk-pager a[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+  color: var(--pk-muted);
+  border-color: var(--pk-border);
+}
+
+.pk-pager button:disabled:hover,
+.pk-pager button:disabled:focus,
+.pk-pager a[aria-disabled="true"]:hover,
+.pk-pager a[aria-disabled="true"]:focus {
+  color: var(--pk-muted);
+  border-color: var(--pk-border);
+}
+
+.pk-pager[aria-disabled="true"] a,
+.pk-pager[aria-disabled="true"] button {
+  opacity: 0.55;
+  pointer-events: none;
+  color: var(--pk-muted);
+  border-color: var(--pk-border);
+}
+
+/* Author display:flex on stacks and rows otherwise beats the UA [hidden] rule. */
+[hidden] {
+  display: none !important;
+}

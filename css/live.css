@@ -1,0 +1,185 @@
+/* Optional live-session widgets. A settings-only app can skip this sheet. */
+
+.pk-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pk-person {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.5rem;
+}
+
+.pk-person .pk-pill {
+  margin-inline-start: auto;
+}
+
+.pk-person-avatar {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-radius: 999px;
+  background: var(--pk-surface-2);
+  border: 1px solid var(--pk-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--pk-text-sm);
+  font-weight: 700;
+  color: var(--pk-text-soft);
+}
+
+.pk-person-name {
+  font-weight: 600;
+  color: var(--pk-text-soft);
+}
+
+.pk-person-role {
+  display: block;
+  font-size: var(--pk-text-sm);
+  font-weight: 400;
+  color: var(--pk-muted);
+}
+
+.pk-selectable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.65rem;
+}
+
+.pk-selectable {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  text-align: left;
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: var(--pk-radius-card);
+  padding: 0.85rem 0.95rem;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pk-selectable[aria-pressed="true"] {
+  border-color: var(--pk-link);
+  box-shadow: inset 0 0 0 1px rgba(147, 197, 253, 0.35);
+  background: var(--pk-surface-2);
+}
+
+.pk-selectable:focus-visible,
+.pk-choice:focus-visible {
+  outline: none;
+  box-shadow: var(--pk-focus);
+}
+
+.pk-selectable-title {
+  font-weight: 600;
+  color: var(--pk-text-soft);
+}
+
+.pk-selectable-cat {
+  font-size: var(--pk-text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pk-label);
+}
+
+.pk-selectable-cost {
+  font-size: var(--pk-text-sm);
+  color: var(--pk-muted);
+}
+
+.pk-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pk-choice {
+  appearance: none;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--pk-radius-card);
+  border: 1px solid var(--pk-border);
+  background: var(--pk-surface);
+  color: var(--pk-text-soft);
+  font: inherit;
+  font-size: var(--pk-text-title);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pk-choice[aria-pressed="true"] {
+  border-color: var(--pk-link);
+  color: var(--pk-link);
+  background: var(--pk-surface-2);
+}
+
+.pk-selectable:disabled,
+.pk-choice:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pk-face-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.pk-face {
+  appearance: none;
+  min-width: 5.5rem;
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: var(--pk-radius-card);
+  padding: 0.85rem 0.9rem;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+}
+
+button.pk-face {
+  cursor: pointer;
+}
+
+.pk-face:disabled {
+  cursor: default;
+}
+
+.pk-face-value {
+  display: block;
+  font-size: calc(var(--pk-text-title) * 1.35);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--pk-text-soft);
+  line-height: 1.1;
+}
+
+.pk-face-caption {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: var(--pk-text-sm);
+  color: var(--pk-muted);
+}
+
+.pk-timer {
+  font-size: calc(var(--pk-text-title) * 1.1);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--pk-text-soft);
+}
+
+.pk-room-status {
+  font-size: var(--pk-text-body);
+  font-weight: 600;
+  color: var(--pk-text-soft);
+}

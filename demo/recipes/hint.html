@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Hint · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Item</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+        <a href="./popover.html">Popover</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Hint</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <section class="pk-card pk-stack">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Status</h2>
+          <span class="pk-hint-wrap">
+            <a
+              class="pk-hint"
+              href="./hint-help.html#status"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="About this status"
+              aria-describedby="status-hint-tip"
+            ><span aria-hidden="true">i</span></a>
+            <span id="status-hint-tip" class="pk-hint-tip" role="tooltip">
+              Status is a short fact. Open the guide for the long version.
+            </span>
+          </span>
+        </div>
+        <dl class="pk-dl">
+          <dt>Owner</dt>
+          <dd>Account</dd>
+          <dt>Status</dt>
+          <dd>Open</dd>
+        </dl>
+      </section>
+
+      <section class="pk-card pk-stack">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Hold</h2>
+          <span class="pk-hint-wrap">
+            <a
+              class="pk-hint pk-hint-warn"
+              href="./hint-help.html#hold"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="About this hold"
+              aria-describedby="hold-hint-tip"
+            ><span aria-hidden="true">!</span></a>
+            <span id="hold-hint-tip" class="pk-hint-tip" role="tooltip">
+              This item is on hold. Open the guide.
+            </span>
+          </span>
+        </div>
+        <p class="pk-muted">A warn hint is still quiet chrome. Not a banner.</p>
+      </section>
+
+      <section class="pk-card pk-stack">
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Blocked</h2>
+          <span class="pk-hint-wrap">
+            <a
+              class="pk-hint pk-hint-err"
+              href="./hint-help.html#blocked"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="About this block"
+              aria-describedby="blocked-hint-tip"
+            ><span aria-hidden="true">×</span></a>
+            <span id="blocked-hint-tip" class="pk-hint-tip" role="tooltip">
+              This item cannot move until the block is cleared. Open the guide.
+            </span>
+          </span>
+        </div>
+        <p class="pk-muted">A critical hint uses the error color. The banner still owns page errors.</p>
+      </section>
+
+      <section class="pk-card pk-stack">
+        <p class="pk-label">
+          Plan
+          <span class="pk-hint-wrap">
+            <a
+              class="pk-hint"
+              href="./hint-help.html#plan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="About this plan"
+              aria-describedby="plan-hint-tip"
+            ><span aria-hidden="true">i</span></a>
+            <span id="plan-hint-tip" class="pk-hint-tip" role="tooltip">
+              Plan is a read-only fact. Open the guide.
+            </span>
+          </span>
+        </p>
+        <dl class="pk-dl">
+          <dt>Seats</dt>
+          <dd>3</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

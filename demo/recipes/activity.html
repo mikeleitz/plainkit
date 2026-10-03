@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Activity · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Activity</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Activity</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <section class="pk-card pk-stack" id="item-card">
+        <h2 class="pk-card-title">Item</h2>
+        <dl class="pk-dl">
+          <dt>Title</dt>
+          <dd id="item-title">Widget</dd>
+          <dt>Owner</dt>
+          <dd>Account</dd>
+        </dl>
+        <ol class="pk-steps" id="item-steps" aria-label="Status">
+          <li data-step="created">Created</li>
+          <li data-step="assigned">Assigned</li>
+          <li data-step="review">Review</li>
+          <li data-step="closed">Closed</li>
+        </ol>
+      </section>
+
+      <section class="pk-card pk-empty" id="empty">
+        <h2>No activity yet</h2>
+        <p>Events will show here when this item changes.</p>
+      </section>
+
+      <section class="pk-card" id="log-card" hidden>
+        <div class="pk-toolbar">
+          <h2 class="pk-card-title">Activity</h2>
+          <div class="pk-cluster" id="zone-toggle" role="group" aria-label="Time zone">
+            <button type="button" class="pk-btn" id="zone-local" aria-pressed="true">Local</button>
+            <button type="button" class="pk-btn" id="zone-utc" aria-pressed="false">UTC</button>
+          </div>
+        </div>
+        <ol class="pk-timeline" id="activity"></ol>
+      </section>
+    </div>
+  </div>
+
+  <template id="tpl-event">
+    <li>
+      <time datetime="">2026-03-12T16:00:00Z</time>
+      <span class="pk-timeline-title"></span>
+      <span class="pk-timeline-meta"></span>
+    </li>
+  </template>
+
+  <div id="zone-note" class="pk-popover pk-note" popover="manual" hidden anchor="zone-toggle" role="status"></div>
+
+  <script type="module" src="./activity.js"></script>
+</body>
+</html>

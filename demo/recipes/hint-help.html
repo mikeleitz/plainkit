@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Item guide · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Item guide</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="./hint.html">Hint</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><a href="./hint.html">Hint</a></li>
+        <li><span aria-current="page">Guide</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-stack">
+      <section class="pk-card pk-stack" id="status">
+        <h2 class="pk-card-title">Status</h2>
+        <p>
+          Status is a short fact on the item card. Open, hold, and blocked
+          are examples. The circle on the card is only a door into this
+          page.
+        </p>
+      </section>
+
+      <section class="pk-card pk-stack" id="hold">
+        <h2 class="pk-card-title">Hold</h2>
+        <p>
+          A hold pauses work. It is not an error. The warn circle on the
+          card points here so the card itself can stay short.
+        </p>
+      </section>
+
+      <section class="pk-card pk-stack" id="blocked">
+        <h2 class="pk-card-title">Blocked</h2>
+        <p>
+          A block means the item cannot move until someone clears it. Use
+          a banner when the whole page failed. Use this circle when the
+          item is still on the page and the long story lives here.
+        </p>
+      </section>
+
+      <section class="pk-card pk-stack" id="plan">
+        <h2 class="pk-card-title">Plan</h2>
+        <p>
+          Plan is a read-only fact sheet. A hint may sit after a label
+          when the card has no toolbar title.
+        </p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

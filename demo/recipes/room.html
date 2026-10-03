@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Room · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/live.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell pk-shell-wide">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Vote</p>
+          <h1>Room</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Room</span></li>
+      </ol>
+    </nav>
+
+    <div class="pk-card pk-banner pk-banner-warn" id="dropped" hidden>
+      <h2>Send dropped</h2>
+      <p>The socket is not open. Connect first, then vote.</p>
+    </div>
+
+    <section class="pk-split">
+      <div class="pk-main pk-stack">
+        <div class="pk-card pk-cluster">
+          <span class="pk-room-status" id="room-title">Room</span>
+          <span class="pk-pill pk-pill-warn" id="room-pill">idle</span>
+          <span class="pk-timer" id="room-timer">0:00</span>
+        </div>
+        <p class="pk-muted">
+          Status: <strong id="live-status">idle</strong>.
+          Last event: <strong id="live-meta">none</strong>.
+        </p>
+        <div>
+          <p class="pk-label">Options</p>
+          <div class="pk-selectable-grid" id="option-grid"></div>
+        </div>
+        <div class="pk-btn-row">
+          <button type="button" class="pk-btn pk-btn-cta" id="connect">Connect</button>
+          <button type="button" class="pk-btn" id="disconnect">Disconnect</button>
+          <button type="button" class="pk-btn" id="send-down">Send while down</button>
+        </div>
+      </div>
+      <aside class="pk-aside">
+        <section class="pk-card">
+          <h2 class="pk-card-title">People</h2>
+          <div class="pk-roster" id="roster"></div>
+        </section>
+      </aside>
+    </section>
+  </div>
+
+  <template id="tpl-option">
+    <button type="button" class="pk-selectable" aria-pressed="false">
+      <span class="pk-selectable-cat"></span>
+      <span class="pk-selectable-title"></span>
+      <span class="pk-selectable-cost"></span>
+    </button>
+  </template>
+  <template id="tpl-person">
+    <div class="pk-person">
+      <span class="pk-person-avatar"></span>
+      <span>
+        <span class="pk-person-name"></span>
+        <span class="pk-person-role"></span>
+      </span>
+      <span class="pk-pill"></span>
+    </div>
+  </template>
+  <script type="module" src="./room.js"></script>
+</body>
+</html>

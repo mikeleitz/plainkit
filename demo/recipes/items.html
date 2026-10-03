@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Items · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Items</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="pk-crumb">
+        <li><a href="../">Recipes</a></li>
+        <li><span aria-current="page">Items</span></li>
+      </ol>
+    </nav>
+
+    <section class="pk-card pk-empty" id="empty">
+      <h2>No items yet</h2>
+      <p>Create an item when you are ready to track it.</p>
+      <button type="button" class="pk-btn pk-btn-cta" id="open-create-empty">New item</button>
+    </section>
+
+    <section class="pk-card" id="list-card" hidden>
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Items</h2>
+        <button type="button" class="pk-btn pk-btn-cta" id="open-create">New item</button>
+      </div>
+      <div class="pk-list" id="item-list"></div>
+    </section>
+  </div>
+
+  <dialog class="pk-dialog" id="create-dialog" aria-labelledby="create-title">
+    <h2 id="create-title">New item</h2>
+    <form id="create-form" class="pk-stack" method="dialog">
+      <label class="pk-field" id="field-title">
+        <span class="pk-field-label">Title</span>
+        <input class="pk-input" name="title" type="text">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <div class="pk-form-actions">
+        <button type="submit" class="pk-btn pk-btn-cta">Create</button>
+        <button type="button" class="pk-btn" id="cancel-create">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="pk-dialog" id="delete-dialog" aria-labelledby="delete-title">
+    <h2 id="delete-title">Remove item</h2>
+    <p class="pk-muted" id="delete-copy">This item will be removed from the list.</p>
+    <div class="pk-form-actions">
+      <button type="button" class="pk-btn pk-btn-cta" id="confirm-delete">Remove</button>
+      <button type="button" class="pk-btn" id="cancel-delete">Cancel</button>
+    </div>
+  </dialog>
+
+  <template id="tpl-item">
+    <div class="pk-list-row">
+      <span>
+        <span class="pk-list-title"></span>
+        <span class="pk-list-meta"></span>
+      </span>
+      <button type="button" class="pk-btn" data-remove>Remove</button>
+    </div>
+  </template>
+
+  <script type="module" src="./items.js"></script>
+</body>
+</html>

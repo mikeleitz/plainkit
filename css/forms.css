@@ -1,0 +1,177 @@
+.pk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pk-field-label,
+.pk-label {
+  font-size: var(--pk-text-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pk-label);
+}
+
+.pk-label {
+  margin: 1.25rem 0 0.45rem;
+}
+
+.pk-label:first-child {
+  margin-top: 0;
+}
+
+.pk-field .pk-field-label {
+  margin: 0;
+}
+
+.pk-input,
+.pk-textarea,
+.pk-select {
+  width: 100%;
+  min-height: var(--pk-control-height);
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--pk-radius-control);
+  border: 1px solid var(--pk-border);
+  background: var(--pk-soft);
+  color: var(--pk-text);
+  font: inherit;
+}
+
+.pk-input[type="date"],
+.pk-input[type="datetime-local"],
+.pk-input[type="time"],
+.pk-input[type="number"],
+.pk-input[type="search"],
+.pk-input[type="tel"],
+.pk-input[type="url"] {
+  color-scheme: inherit;
+}
+
+/* Keep kit colors when the browser paints a filled field. */
+.pk-input:autofill,
+.pk-input:-webkit-autofill,
+.pk-textarea:autofill,
+.pk-textarea:-webkit-autofill,
+.pk-select:autofill,
+.pk-select:-webkit-autofill {
+  -webkit-text-fill-color: var(--pk-text);
+  caret-color: var(--pk-text);
+  box-shadow: 0 0 0 1000px var(--pk-soft) inset;
+  border-color: var(--pk-border);
+  transition: background-color 99999s ease-out;
+}
+
+.pk-input:autofill:focus,
+.pk-input:-webkit-autofill:focus,
+.pk-textarea:autofill:focus,
+.pk-textarea:-webkit-autofill:focus,
+.pk-select:autofill:focus,
+.pk-select:-webkit-autofill:focus {
+  border-color: var(--pk-link);
+  box-shadow: 0 0 0 1000px var(--pk-soft) inset, var(--pk-focus);
+}
+
+.pk-input[type="file"] {
+  padding-block: 0.45rem;
+}
+
+.pk-textarea {
+  min-height: 7rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.pk-select {
+  cursor: pointer;
+}
+
+.pk-input:focus,
+.pk-textarea:focus,
+.pk-select:focus {
+  outline: none;
+  border-color: var(--pk-link);
+  box-shadow: var(--pk-focus);
+}
+
+.pk-input[aria-invalid="true"],
+.pk-textarea[aria-invalid="true"],
+.pk-select[aria-invalid="true"] {
+  border-color: var(--pk-err);
+}
+
+.pk-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: var(--pk-text-body);
+  color: var(--pk-text);
+  cursor: pointer;
+}
+
+.pk-check input {
+  margin: 0.2rem 0 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--pk-cta);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+  width: 100%;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 0.55rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--pk-surface-2);
+  overflow: hidden;
+  accent-color: var(--pk-cta);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background: var(--pk-surface-2);
+  border-radius: 999px;
+}
+
+progress::-webkit-progress-value {
+  background: var(--pk-cta);
+  border-radius: 999px;
+}
+
+progress::-moz-progress-bar {
+  background: var(--pk-cta);
+  border-radius: 999px;
+}
+
+.pk-field-hint {
+  color: var(--pk-muted);
+  font-size: var(--pk-text-sm);
+  line-height: 1.45;
+}
+
+.pk-field-error {
+  color: var(--pk-err);
+  font-size: var(--pk-text-sm);
+  line-height: 1.45;
+}
+
+.pk-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pk-space);
+  margin-top: 0.35rem;
+}

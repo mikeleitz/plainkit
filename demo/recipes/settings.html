@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Settings · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Settings</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <div class="pk-card pk-banner pk-banner-ok" id="banner-ok" hidden>
+      <h2>Saved</h2>
+      <p>Account settings are up to date.</p>
+    </div>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Profile</h2>
+      <form id="settings-form" class="pk-stack" method="post">
+        <label class="pk-field" id="field-name">
+          <span class="pk-field-label">Display name</span>
+          <input class="pk-input" name="name" type="text" autocomplete="nickname">
+          <span class="pk-field-error" hidden></span>
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">First name</span>
+          <input class="pk-input" name="given-name" type="text" autocomplete="given-name">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Last name</span>
+          <input class="pk-input" name="family-name" type="text" autocomplete="family-name">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Email</span>
+          <input class="pk-input" name="email" type="email" autocomplete="email">
+        </label>
+        <label class="pk-field">
+          <span class="pk-field-label">Phone</span>
+          <input class="pk-input" name="tel" type="tel" autocomplete="tel" inputmode="tel">
+        </label>
+        <fieldset class="pk-stack">
+          <legend class="pk-field-label">Address</legend>
+          <label class="pk-field">
+            <span class="pk-field-label">Street</span>
+            <input class="pk-input" name="street-address" type="text" autocomplete="street-address">
+          </label>
+          <label class="pk-field">
+            <span class="pk-field-label">City</span>
+            <input class="pk-input" name="address-level2" type="text" autocomplete="address-level2">
+          </label>
+          <label class="pk-field">
+            <span class="pk-field-label">Region</span>
+            <input class="pk-input" name="address-level1" type="text" autocomplete="address-level1">
+          </label>
+          <label class="pk-field">
+            <span class="pk-field-label">Postal code</span>
+            <input class="pk-input" name="postal-code" type="text" autocomplete="postal-code">
+          </label>
+          <label class="pk-field">
+            <span class="pk-field-label">Country</span>
+            <select class="pk-select" name="country" autocomplete="country">
+              <option value="">Select</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="GB">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="AU">Australia</option>
+            </select>
+          </label>
+        </fieldset>
+        <label class="pk-check">
+          <input type="checkbox" name="notices">
+          <span>Email me when an item changes</span>
+        </label>
+        <div class="pk-form-actions">
+          <button type="submit" class="pk-btn pk-btn-cta">Save</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="pk-card pk-stack" id="times-card">
+      <div class="pk-toolbar">
+        <h2 class="pk-card-title">Times</h2>
+        <div class="pk-cluster" id="zone-toggle" role="group" aria-label="Time zone">
+          <button type="button" class="pk-btn" id="zone-local" aria-pressed="true">Local</button>
+          <button type="button" class="pk-btn" id="zone-utc" aria-pressed="false">UTC</button>
+        </div>
+      </div>
+      <p class="pk-muted">
+        Pages with timestamps use this choice. Example:
+        <time datetime="2026-03-12T16:00:00Z">12 Mar 2026, 16:00</time>
+      </p>
+    </section>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Plan</h2>
+      <dl class="pk-dl">
+        <dt>Plan</dt>
+        <dd id="plan-name">standard</dd>
+        <dt>Seats</dt>
+        <dd id="plan-seats">3</dd>
+        <dt>Status</dt>
+        <dd id="plan-status">active</dd>
+      </dl>
+    </section>
+  </div>
+  <div id="zone-note" class="pk-popover pk-note" popover="manual" hidden anchor="zone-toggle" role="status"></div>
+  <script type="module" src="./settings.js"></script>
+</body>
+</html>

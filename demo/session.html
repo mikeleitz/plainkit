@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Session · plainkit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Hide and deny</p>
+          <h1>Session</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="./">Recipes</a>
+        <a href="./session.html" aria-current="page">Session</a>
+        <a href="../pages/403.html">403</a>
+        <a href="../pages/404.html">404</a>
+        <a href="../pages/500.html">500</a>
+      </nav>
+    </header>
+
+    <p class="pk-muted">
+      Session is a provider. Hide a control with <code>lacksRole</code>.
+      Deny a whole page with <code>guard</code>. Client hide is UX.
+      The server still enforces access.
+    </p>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">This page</h2>
+      <p class="pk-card-body">
+        Signed in as <strong id="who">Ada</strong>.
+        Roles: <span id="role-list">member</span>
+      </p>
+      <div class="pk-form-actions">
+        <button type="button" class="pk-btn" id="toggle-admin">Grant admin</button>
+      </div>
+      <p class="pk-field-hint" id="admin-hint">Admin tools stay hidden without the admin role.</p>
+      <div class="pk-form-actions">
+        <button type="button" class="pk-btn pk-btn-cta" id="admin-save" hidden>Save settings</button>
+        <button type="button" class="pk-btn" id="admin-export" disabled>Export</button>
+      </div>
+    </section>
+
+    <section class="pk-card pk-stack">
+      <h2 class="pk-card-title">Whole page deny</h2>
+      <p class="pk-card-body">
+        The next page calls <code>session.guard('admin')</code> with a
+        member-only session. The browser goes to the 403 page.
+      </p>
+      <p>
+        <a class="pk-btn" href="./restricted.html">Open admin page</a>
+      </p>
+    </section>
+  </div>
+  <script type="module" src="./session.js"></script>
+</body>
+</html>

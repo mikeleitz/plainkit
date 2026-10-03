@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Table · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page">
+  <div class="pk-app">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Items</h1>
+        </div>
+      </div>
+      <nav class="pk-nav" aria-label="Demo">
+        <a href="../">Recipes</a>
+      </nav>
+    </header>
+
+    <div class="pk-app-body">
+      <nav class="pk-side" aria-label="Account">
+        <div class="pk-nav">
+          <a href="./dashboard.html">Dashboard</a>
+          <a href="./items.html">Items</a>
+          <a href="./table.html" aria-current="page">Table</a>
+          <a href="./accounts.html">Accounts</a>
+          <a href="./invite.html">Invite</a>
+          <a href="./settings.html">Settings</a>
+          <a href="./status.html">Item</a>
+        </div>
+      </nav>
+      <main class="pk-main pk-stack">
+        <section class="pk-card">
+          <div class="pk-toolbar">
+            <h2 class="pk-card-title">Items</h2>
+            <form method="get" class="pk-cluster" id="table-search">
+              <input class="pk-input" name="q" type="search" value="" autocomplete="off">
+              <button type="submit" class="pk-btn">Search</button>
+              <button type="button" class="pk-btn" id="refresh">Refresh</button>
+            </form>
+            <div class="pk-cluster">
+              <button type="button" class="pk-btn pk-btn-cta" id="create">New</button>
+              <button type="button" class="pk-btn" id="edit" disabled>Edit</button>
+              <button type="button" class="pk-btn" id="remove" disabled>Delete</button>
+            </div>
+          </div>
+
+          <div class="pk-table-wrap" id="table-wrap" hidden>
+            <table class="pk-table" id="items-table">
+              <caption id="table-caption">Items</caption>
+              <thead>
+                <tr>
+                  <th>
+                    <label class="pk-check">
+                      <input type="checkbox" id="select-all" aria-label="Select all on this page">
+                    </label>
+                  </th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Plan</th>
+                  <th scope="col" class="pk-num">Seats</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="item-rows"></tbody>
+              <tfoot>
+                <tr>
+                  <td></td>
+                  <th scope="row">Total</th>
+                  <td></td>
+                  <td class="pk-num" id="table-seats"></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="pk-empty" id="empty" hidden>
+            <h2 id="empty-title">No items match</h2>
+            <p id="empty-copy">Try a different search.</p>
+            <button type="button" class="pk-btn pk-btn-cta" id="create-empty">New</button>
+          </div>
+
+          <nav aria-label="Pages">
+            <ol class="pk-pager" id="pager" hidden></ol>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <template id="tpl-row">
+    <tr>
+      <td>
+        <label class="pk-check">
+          <input type="checkbox" data-id>
+        </label>
+      </td>
+      <th scope="row" data-name></th>
+      <td data-plan></td>
+      <td class="pk-num" data-seats></td>
+      <td data-state></td>
+    </tr>
+  </template>
+  <template id="tpl-page">
+    <li><a href=""></a></li>
+  </template>
+
+  <dialog class="pk-dialog" id="item-dialog" aria-labelledby="item-dialog-title">
+    <h2 id="item-dialog-title">New item</h2>
+    <form id="item-form" class="pk-stack" method="dialog">
+      <label class="pk-field" id="field-name">
+        <span class="pk-field-label">Name</span>
+        <input class="pk-input" name="name" type="text" autocomplete="off">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <label class="pk-field">
+        <span class="pk-field-label">Plan</span>
+        <select class="pk-select" name="plan">
+          <option value="standard">standard</option>
+          <option value="trial">trial</option>
+        </select>
+      </label>
+      <label class="pk-field" id="field-seats">
+        <span class="pk-field-label">Seats</span>
+        <input class="pk-input" name="seats" type="number" min="1" value="1">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <label class="pk-field">
+        <span class="pk-field-label">Status</span>
+        <select class="pk-select" name="state">
+          <option value="draft">draft</option>
+          <option value="active">active</option>
+        </select>
+      </label>
+      <div class="pk-form-actions">
+        <button type="submit" class="pk-btn pk-btn-cta" id="item-save">Create</button>
+        <button type="button" class="pk-btn" id="cancel-item">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="pk-dialog" id="delete-dialog" aria-labelledby="delete-title">
+    <h2 id="delete-title">Remove item</h2>
+    <p class="pk-muted" id="delete-copy">This item will be removed from the list.</p>
+    <div class="pk-form-actions">
+      <button type="button" class="pk-btn pk-btn-cta" id="confirm-delete">Remove</button>
+      <button type="button" class="pk-btn" id="cancel-delete">Cancel</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="./table.js"></script>
+</body>
+</html>

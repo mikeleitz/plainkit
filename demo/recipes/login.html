@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Sign in · plainkit</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body class="pk-page pk-cover">
+  <main class="pk-shell">
+    <header class="pk-header">
+      <div class="pk-header-start">
+        <div class="pk-mark" aria-hidden="true">pk</div>
+        <div>
+          <p class="pk-sub">Account</p>
+          <h1>Sign in</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="pk-card pk-banner pk-banner-err" id="banner-err" hidden>
+      <h2>Could not sign in</h2>
+      <p>Check the email and password and try again.</p>
+    </div>
+    <div class="pk-card pk-banner pk-banner-ok" id="banner-ok" hidden>
+      <h2>Signed in</h2>
+      <p>Continue to your items. This demo does not call a server.</p>
+      <a class="pk-btn pk-btn-cta" href="./items.html">Continue</a>
+    </div>
+    <div class="pk-card pk-banner pk-banner-info" id="banner-info" hidden>
+      <h2>Another way</h2>
+      <p>This demo does not call an identity provider.</p>
+    </div>
+
+    <form id="login-form" class="pk-card pk-stack" method="post">
+      <label class="pk-field" id="field-email">
+        <span class="pk-field-label">Email</span>
+        <input class="pk-input" name="email" type="email" autocomplete="username">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <label class="pk-field" id="field-password">
+        <span class="pk-field-label">Password</span>
+        <input class="pk-input" name="password" type="password" autocomplete="current-password">
+        <span class="pk-field-error" hidden></span>
+      </label>
+      <div class="pk-form-actions">
+        <button type="submit" class="pk-btn pk-btn-cta">Sign in</button>
+        <button type="button" class="pk-btn" id="other">Continue another way</button>
+      </div>
+    </form>
+    <p class="pk-muted">
+      <a class="pk-inline" href="../">Recipes</a>
+    </p>
+  </main>
+  <script type="module" src="./login.js"></script>
+</body>
+</html>
